@@ -2,8 +2,9 @@ Ext.application({
     name: 'bathak',
 
     onReady: function() {
+	
 	var request = {
-					url: 'http://localhost/touch-2.3.1/form-simp.php',
+					url: 'http://localhost/touch-2.3.1/registration.php',
 					method: 'POST',
 
 					// commenting this out will simply send this form with normal params
@@ -19,15 +20,36 @@ Ext.application({
 						out.setHtml(response.message);
 					}
 				};
+				
 		 Ext.create("Ext.tab.Panel",
 		{
             fullscreen: true,
             tabBarPosition: 'top',
 
             items: 
-			[
+			[ {
+                    title: 'Home',
+                    iconCls: 'home',
+                    cls: 'home',
+                    html: [
+                       '<h1>Welcome to Suryodaya</h1>',
+                        "<p>Register using these app and get token",
+                        "You can also see the schedule of Suryodaya Baithak</p>",
+                        '<h2>and can also set the reminder of schedule</h2>'
+                    ].join("")
+                },{
+                    title: 'Schedule',
+					 iconCls:'compose',
+                    
+                    cls: 'home',
+                    html: [
+                       '<h1>Suryodaya Baithak Schedule</h1>'
+                        
+                    ].join("")
+                },
+				
 			{
-			        title: 'Baithak Registration',
+			        title: 'Registration',
                     iconCls: 'user',
                     xtype: 'formpanel',
                     layout: 'vbox',
