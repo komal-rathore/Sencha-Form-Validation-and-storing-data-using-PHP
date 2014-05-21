@@ -1,0 +1,15 @@
+Ext.define('MyApp.view.CountryPanel', {
+    extend: 'Ext.dataview.NestedList',
+    alias : 'widget.countryPanel',
+     
+    config: {
+     store : 'Countries',
+     title: 'Select your Continent',
+        displayField: 'text',
+          
+     detailCard: {
+            html: 'You can see detail information here!'
+        } 
+     
+    } 
+});
